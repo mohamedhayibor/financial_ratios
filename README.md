@@ -1,4 +1,4 @@
-financial_ratios ![](https://travis-ci.org/mohamedhayibor/financial_ratios.svg?branch=master) [![crates.io](https://img.shields.io/crates/v/financial_ratios.svg)](https://crates.io/crates/financial_ratios)
+# financial_ratios ![](https://travis-ci.org/mohamedhayibor/financial_ratios.svg?branch=master) [![crates.io](https://img.shields.io/crates/v/financial_ratios.svg)](https://crates.io/crates/financial_ratios)
 
 
 This crate (Rust library) provides utility functions (metrics) to measure a firm's performance (company's health).
