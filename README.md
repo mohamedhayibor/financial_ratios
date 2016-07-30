@@ -13,30 +13,38 @@ financial_ratios = "0.0.0" // preferably the latest version on crates.io
 ## Examples
 ```rust
 extern crate financial_ratios;
-extern crate round;
 
-use round::round;
-use finance::{ present_value, future_value };
+use financial_ratios::{ earnings_per_share, return_on_assets };
 
 fn main() {
-    let test_value = round(present_value(0.1, 1., 1000.), 2); // 909.09
+    let test_1 = earnings_per_share(5000., 500000.);   // 0.01
 
-    let test_value = round(future_value(0.1, 1., 1000.), 2);  // 1100.00
+    let test_2 = return_on_assets(2000., 5000.);       // 0.4
     // and so on with the other apis just feed what's expected
     // particularly the exact types
 }
 
 ```
 
-| API | arguments | abbr |
-|-----|--------|--------:|
-
+| API | arguments |
+|-----|--------|
+| current_ratio | (current_assets: f64, current_liabilities: f64) |
+| quick_ratio | (current_assets: f64, inventories: f64, current_liabilities: f64) |
+| cash_ratio | (cash: f64, current_liabilities: f64) |
+| debt_ratio | (total_liabilities: f64, total_assets: f64) |
+| times_interest_earned | (ebit: f64, interest_expense: f64) |
+| cash_coverage_ratio | (ebit: f64, depreciation: f64, interest_expense: f64) |
+| inventory_turnover | (cogs: f64, inventory: f64) |
+| receivables_turnover | (sales: f64, accounts_receivable: f64) |
+| total_asset_turnover | (sales: f64, total_assets: f64) |
+| profit_margin | (net_income: f64, sales: f64) |
+| return_on_assets | (net_income: f64, total_assets: f64) |
+| return_on_equity | (net_income: f64, total_owners_equity: f64) |
+| earnings_per_share | (net_income: f64, outstanding_shares: f64) |
 
 Note that all output are of type `f64`, you are free to choose what degree of rounding is right for your project.
 
 > Unless specified the inputs are expected to be floats. Your program will `panic` if you pass integers.
-
-Input accordingly if calculating in (monthly, semi-annual, daily) terms. In another words, make sure that your compounding_periods (daily, monthly, annual...) is used with corresponding rates (daily, monthly, annual).
 
 > For consistency sake `rate` is getting passed as a plain float and not as a percentage (%)
 

@@ -2,7 +2,6 @@
 // GNU licensed, license file can be found at the root of the repository
 // Copyright 2016 - Mohamed Hayibor
 
-// liquidity ratios
 pub fn current_ratio(current_assets: f64, current_liabilities: f64) -> f64 {
     current_assets / current_liabilities
 }
@@ -33,7 +32,6 @@ fn test_cash_ratio() {
     assert_eq!(test, 2.);
 }
 
-// financial leverage ratios
 pub fn debt_ratio(total_liabilities: f64, total_assets: f64) -> f64 {
     total_liabilities / total_assets
 }
@@ -64,7 +62,6 @@ fn test_cash_coverage() {
     assert_eq!(test, 10.);
 }
 
-// asset management ratio
 pub fn inventory_turnover(cogs: f64, inventory: f64) -> f64 {
     cogs / inventory
 }
@@ -74,8 +71,6 @@ fn test_inventory_turnover() {
     let test = inventory_turnover(2000., 4000.);
     assert_eq!(test, 0.5);
 }
-
-/// days maybe
 
 pub fn receivables_turnover(sales: f64, accounts_receivable: f64) -> f64 {
     sales / accounts_receivable

@@ -3,7 +3,7 @@ name = "financial_ratios"
 version = "0.0.0"
 authors = ["Mohamed Hayibor <mohamedhayibor@gmail.com>"]
 
-publish = false
+publish = true
 description = "This crate (Rust library) provides utility functions (metrics) to measure a firm's performance (company's health)."
 
 documentation = "https://github.com/mohamedhayibor/financial_ratios"
@@ -12,5 +12,3 @@ repository = "https://github.com/mohamedhayibor/financial_ratios"
 license = "GPL-2.0"
 keywords = ["finance", "ratios", "financial", "performance", "calculations"]
 
-[dependencies]
-round = "0.1.0"
